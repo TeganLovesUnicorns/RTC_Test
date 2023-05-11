@@ -22,14 +22,14 @@ This program is written in the Platformio IDE for VS Code. Here are links to the
 First we added all the library includes to use Arduino, I2C and the RTC. I used the library that had already been written by Adafruit for varius RTC chips including this one.
 
 After that we run the setup code. after the initializing statements you will see this commented out code.
-```c++
+```cpp
   // RTC.adjust(DateTime(__DATE__, __TIME__)); // Uncomment this to set time for RTC to system time at the moment code was compiled
 ```
 This code is there for when you are first testing an RTC. This grabs the system time from when the code was compiled and then updates the chips memory with that. Please note that you may want to comment this code out after the first test so that you don't reset your clock on a reset of the microcontroller.
 
 
 In the code below I put in the functions from the RTC library to disable certain parts of the RTC that I don't plan on using, such as the Square Wave output as well as the raw oscilator signal. Feel free to comment in and out the functions that suit your project's needs.
-```c++
+```cpp
   RTC.writeSqwPinMode(DS3231_OFF); //Sets SQW pin output, in this case to off. Check library's .h for other possible settings.
   // RTC.writeSqwPinMode(DS3231_SquareWave1Hz); // Sets the SQW output to 1hz.
   // RTC.writeSqwPinMode(DS3231_SquareWave1kHz); // Sets the SQW output to 1khz.
