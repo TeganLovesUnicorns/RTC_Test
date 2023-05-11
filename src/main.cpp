@@ -21,6 +21,11 @@ void setup () {
   // RTC.adjust(DateTime(__DATE__, __TIME__)); // Uncomment this to set time for RTC to system time at the moment code was compiled
 
   RTC.writeSqwPinMode(DS3231_OFF); //Sets SQW pin output, in this case to off. Check library's .h for other possible settings.
+  // RTC.writeSqwPinMode(DS3231_SquareWave1Hz); // Sets the SQW output to 1hz.
+  // RTC.writeSqwPinMode(DS3231_SquareWave1kHz); // Sets the SQW output to 1khz.
+  // RTC.writeSqwPinMode(DS3231_SquareWave4kHz); // Sets the SQW output to 4khz.
+  // RTC.writeSqwPinMode(DS3231_SquareWave8kHz); // Sets the SQW output to 8khz. 
+
   RTC.disable32K(); //Sets External 32k output pin output, in to off. Check library's .h for other possible settings.
   // RTC.enable32K(); //(NOT RECOMMENDED) Enable this if you want to read the 32k raw output off the OSC.
   
